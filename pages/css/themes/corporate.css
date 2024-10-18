@@ -1927,6 +1927,17 @@ body.sidebar-visible .page-sidebar .sidebar-header .sidebar-header-controls {
   padding: 0; /* Remove padding */
   width: auto; /* Allow span to adjust to its content */
   flex: 1; /* Make the text span take up remaining space */
+  color:#ffffff;
+  transition: color 0.3s ease, background-color 0.3s ease; /* Smooth transition */
+}
+
+.page-sidebar .sidebar-menu .menu-items li > a:hover span {
+  color: #626262; /* Change text color on hover */
+  background-color: #333333; /* Optional: Change background color on hover */
+}
+
+.page-sidebar .sidebar-menu .menu-items li > a:hover .icon-thumbnail {
+  color: #00c0ff; /* Optional: Change icon color on hover */
 }
 
 .page-sidebar .sidebar-menu .menu-items li > a {
