@@ -322,7 +322,7 @@
                     <div class="row">
                         <div class="col-12">
                             <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                                <h4 class="mb-sm-0">Allocate Officers</h4>
+                                <h4 class="mb-sm-0">Adjust Officer Promotions</h4>
                             </div>
                         </div>
                     </div>
@@ -332,30 +332,13 @@
                         <div class="col-lg-12">
                             <div class="card">
                                 <div class="card-header">
-                                    <h4 class="card-title mb-0">Allocate Officers</h4>
+                                    <h4 class="card-title mb-0">Adjust Officer Promotions</h4>
                                 </div><!-- end card header -->
 
                                 <div class="card-body">
                                     <div class="listjs-table" id="customerList">
                                         <div class="row g-4 mb-3">
-                                            <div class="col-sm-auto">
-                                                <div>
-                                                    <!-- <button type="button" class="btn add-btn"
-                                                        style="background-color:grey; color: white;"
-                                                        onmouseover="this.style.backgroundColor='#0b6528';"
-                                                        onmouseout="this.style.backgroundColor='grey';"
-                                                        data-bs-toggle="modal" id="create-btn"
-                                                        data-bs-target="#showModal"><i
-                                                            class="ri-add-line align-bottom me-1"></i> Create
-                                                        Admin</button> -->
-                                                    <button class="btn" onClick="deleteMultiple()"
-                                                        style="background-color:green; color: white;"
-                                                        onmouseover="this.style.backgroundColor='#0b6528';"
-                                                        onmouseout="this.style.backgroundColor='red';"><i
-                                                            class="ri-delete-bin-2-line"></i></button>
-                                                </div>
-                                            </div>
-
+                                          
                                             <div class="col-sm">
                                                 <div class="d-flex justify-content-sm-end">
                                                     <div class="search-box ms-2">
@@ -379,46 +362,54 @@
                                                         </th>
                                                         <th class="sort" data-sort="customer_name">Officer ID</th>
                                                         <th class="sort" data-sort="customer_name">Officer Name</th>
-                                                        <th class="sort" data-sort="customer_name">Rank</th>
-                                                        <th class="sort" data-sort="customer_name">Qualification</th>
-                                                        <th class="sort" data-sort="customer_name">Gender</th>
-                                                        <th class="sort" data-sort="customer_name">Current Command</th>
-                                                        <th class="sort" data-sort="customer_name">Availability </th>
+                                                        <th class="sort" data-sort="customer_name">Current Rank</th>
+                                                        <th class="sort" data-sort="customer_name">New Rank <small>(dropdown)</small></th>
+                                                        <th class="sort" data-sort="customer_name">Command</th>
+                                                        <th class="sort" data-sort="customer_name">Promotion Date</th>
+                                                        <!-- <th class="sort" data-sort="customer_name">Notify Officer </th> -->
                                                         <th class="sort" data-sort="action">Action</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody class="list form-check-all">
-                                                    <tr>
-                                                        <th scope="row">
-                                                            <div class="form-check">
-                                                                <input class="form-check-input" type="checkbox"
-                                                                    name="chk_child" value="option1">
-                                                            </div>
-                                                        </th>
-                                                        <td class="id" style="display:none;"><a
-                                                                href="javascript:void(0);"
-                                                                class="fw-medium link-primary">#1</a></td>
-                                                        <td class="customer_name">OFC123</td>
-                                                        <td class="customer_name">John Doe</td>
-                                                        <td class="customer_name">Controller</td>
-                                                        <td class="customer_name">Degree in Law</td>
-                                                        <td class="customer_name">Male</td>
-                                                        <td class="customer_name">Zone A Command</td>
-                                                        <td class="customer_name">Available / Not Available</td>
-
-                                                        <td>
-                                                            <div class="d-flex gap-2" style="float: right;">
-                                                                <div class="edit">
-                                                                    <button class="btn btn-sm"
-                                                                        style="background-color:grey; color: white;"
-                                                                        onmouseover="this.style.backgroundColor='#0b6528';"
-                                                                        onmouseout="this.style.backgroundColor='grey';"
-                                                                        data-bs-toggle="modal"
-                                                                        data-bs-target="#editModal">Allocate</button>
+                                                    <form action="#" method="post">
+                                                        <tr>
+                                                            <th scope="row">
+                                                                <div class="form-check">
+                                                                    <input class="form-check-input" type="checkbox"
+                                                                        name="chk_child" value="option1">
                                                                 </div>
-                                                            </div>
-                                                        </td>
-                                                    </tr>
+                                                            </th>
+                                                            <td class="id" style="display:none;"><a
+                                                                    href="javascript:void(0);"
+                                                                    class="fw-medium link-primary">#1</a></td>
+                                                            <td class="customer_name">OFC12345</td>
+                                                            <td class="customer_name">John Doe</td>
+                                                            <td class="customer_name">Controller</td>
+                                                            <td class="customer_name"><div class="mb-3">
+                                                                <select class="form-control" data-trigger name="status-field"
+                                                                    id="status-field" required>
+                                                                    <option default>-- Select Option --</option>
+                                                                    <option value="Total Number of Officers by Rank">Total Number of Officers by Rank</option>
+                                                                    <option value="Custom Criteria Report">Custom Criteria Report</option>
+                                                                    
+                                                                </select>
+                                                            </div></td>
+                                                            <td class="customer_name">HQ Command</td>
+                                                            <td class="customer_name">2024-10-18</td>
+                                                            <td>
+                                                                <div class="d-flex gap-2" style="float: right;">
+                                                                    <div class="edit">
+                                                                        <button class="btn btn-sm" type="submit"
+                                                                            style="background-color:grey; color: white;"
+                                                                            onmouseover="this.style.backgroundColor='#0b6528';"
+                                                                            onmouseout="this.style.backgroundColor='grey';" >Promote</button>
+                                                                    </div>
+                                                                   
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                    </form>
+                                                    
                                                 </tbody>
                                             </table>
                                             <div class="noresult" style="display: none">

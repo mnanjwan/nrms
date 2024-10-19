@@ -1,12 +1,13 @@
+
 <!doctype html>
 <html lang="en" data-layout="vertical" data-topbar="light" data-sidebar="dark" data-sidebar-size="lg"
     data-sidebar-image="none" data-preloader="disable">
 
 <head>
     <meta charset="utf-8" />
-    <title>NRMS | Officer Allocation</title>
+    <title>NRMS | Report</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta content="File traker" name="description" />
+    <meta content="nrmd" name="description" />
     <meta content="Themesbrand" name="author" />
     <!-- App favicon -->
     <link rel="shortcut icon" href="assets/images/favicon.ico">
@@ -24,11 +25,9 @@
     <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" />
     <!-- custom Css-->
     <link href="assets/css/custom.min.css" rel="stylesheet" type="text/css" />
-
 </head>
 
 <body>
-
     <!-- Begin page -->
     <div id="layout-wrapper">
         <header id="page-topbar">
@@ -79,7 +78,6 @@
                     </div>
 
                     <div class="d-flex align-items-center">
-
                         <div class="dropdown d-md-none topbar-head-dropdown header-item">
                             <button type="button"
                                 class="btn btn-icon btn-topbar btn-ghost-secondary rounded-circle shadow-none"
@@ -125,7 +123,8 @@
                                         <i class="mdi mdi-logout text-muted fs-16 align-middle me-1"
                                             id="auth-toggle-icon"></i>
 
-                                        <span class="align-middle" id="toggle-instance" data-key="t-logout">Logout</span>
+                                        <span class="align-middle" id="toggle-instance"
+                                            data-key="t-logout">Logout</span>
                                     </a>
                                 </div>
                             </div>
@@ -196,6 +195,7 @@
 
                     <div id="two-column-menu">
                     </div>
+                    
                     <ul class="navbar-nav" id="navbar-nav">
                         <li class="nav-item">
                             <a class="nav-link menu-link" href="s_dashboard.html">
@@ -322,132 +322,129 @@
                     <div class="row">
                         <div class="col-12">
                             <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                                <h4 class="mb-sm-0">Allocate Officers</h4>
+                                <h4 class="mb-sm-0">Distribution Report</h4>
                             </div>
                         </div>
                     </div>
                     <!-- end page title -->
 
                     <div class="row">
-                        <div class="col-lg-12">
+                        <div class="col-lg-8 mx-auto">
                             <div class="card">
                                 <div class="card-header">
-                                    <h4 class="card-title mb-0">Allocate Officers</h4>
+                                    <h4 class="card-title mb-0">Distribution Report</h4>
                                 </div><!-- end card header -->
 
                                 <div class="card-body">
-                                    <div class="listjs-table" id="customerList">
-                                        <div class="row g-4 mb-3">
-                                            <div class="col-sm-auto">
-                                                <div>
-                                                    <!-- <button type="button" class="btn add-btn"
-                                                        style="background-color:grey; color: white;"
-                                                        onmouseover="this.style.backgroundColor='#0b6528';"
-                                                        onmouseout="this.style.backgroundColor='grey';"
-                                                        data-bs-toggle="modal" id="create-btn"
-                                                        data-bs-target="#showModal"><i
-                                                            class="ri-add-line align-bottom me-1"></i> Create
-                                                        Admin</button> -->
-                                                    <button class="btn" onClick="deleteMultiple()"
-                                                        style="background-color:green; color: white;"
-                                                        onmouseover="this.style.backgroundColor='#0b6528';"
-                                                        onmouseout="this.style.backgroundColor='red';"><i
-                                                            class="ri-delete-bin-2-line"></i></button>
-                                                </div>
-                                            </div>
 
-                                            <div class="col-sm">
-                                                <div class="d-flex justify-content-sm-end">
-                                                    <div class="search-box ms-2">
-                                                        <input type="text" class="form-control search"
-                                                            placeholder="Search...">
-                                                        <i class="ri-search-line search-icon"></i>
+                                    <form class="tablelist-form" autocomplete="off">
+                                        <div class="modal-body">
+                                            <div class="row">
+                                                <div class="col-sm-12">
+                                                    <div class="mb-3">
+                                                        <label for="status-field" class="form-label">Report Type</label>
+                                                        <select class="form-control" data-trigger name="status-field"
+                                                            id="status-field" required>
+                                                            <option default>-- Select Option --</option>
+                                                            <option value="Total Number of Officers by Rank">Total Number of Officers by Rank</option>
+                                                            <option value="Custom Criteria Report">Custom Criteria Report</option>
+                                                            
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <!-- <div class="col-sm-6">
+                                                    <div class="mb-3">
+                                                        <label for="admin-field" class="form-label">Date Range -Start</label>
+                                                        <input type="date" id="admin-field" class="form-control"
+                                                            placeholder="Search with ID or Name" required />
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-sm-6">
+                                                    <div class="mb-3">
+                                                        <label for="admin-field" class="form-label">Date Range End Date-</label>
+                                                        <input type="date" id="admin-field" class="form-control"
+                                                            placeholder="Search with ID or Name" required />
+                                                    </div>
+                                                </div> -->
+                                            </div>
+                                            <hr>
+                                            <div class="row">
+                                               
+                                                <div class="col-sm-3">
+                                                    <div class="mb-3">
+                                                        <label for="status-field" class="form-label">Report Type</label>
+                                                        <select class="form-control" data-trigger name="status-field"
+                                                            id="status-field" required>
+                                                            <option default>-- Rank --</option>
+                                                            <option value="Total Number of Officers by Rank">Total Number of Officers by Rank</option>
+                                                            <option value="Custom Criteria Report">Custom Criteria Report</option>
+                                                            
+                                                        </select>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-sm-3">
+                                                    <div class="mb-3">
+                                                        <label for="status-field" class="form-label">Qualification</label>
+                                                        <select class="form-control" data-trigger name="status-field"
+                                                            id="status-field" required>
+                                                            <option default>-- Select Option --</option>
+                                                            <option value="Total Number of Officers by Rank">Total Number of Officers by Rank</option>
+                                                            <option value="Custom Criteria Report">Custom Criteria Report</option>
+                                                            
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-3">
+                                                    <div class="mb-3">
+                                                        <label for="status-field" class="form-label">Qualification</label>
+                                                        <select class="form-control" data-trigger name="status-field"
+                                                            id="status-field" required>
+                                                            <option default>-- Select Option --</option>
+                                                            <option value="Total Number of Officers by Rank">Total Number of Officers by Rank</option>
+                                                            <option value="Custom Criteria Report">Custom Criteria Report</option>
+                                                            
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-3">
+                                                    <div class="mb-3">
+                                                        <label for="status-field" class="form-label">Gender</label>
+                                                        <select class="form-control" data-trigger name="status-field"
+                                                            id="status-field" required>
+                                                            <option default>-- Select Option --</option>
+                                                            <option value="Total Number of Officers by Rank">Male</option>
+                                                            <option value="Custom Criteria Report">Female</option>
+                                                            
+                                                        </select>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-sm-3">
+                                                    <div class="mb-3">
+                                                        <label for="status-field" class="form-label">Zone</label>
+                                                        <select class="form-control" data-trigger name="status-field"
+                                                            id="status-field" required>
+                                                            <option default>-- Select Option --</option>
+                                                            <option value="Total Number of Officers by Rank">Male</option>
+                                                            <option value="Custom Criteria Report">Female</option>
+                                                            
+                                                        </select>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-
-                                        <div class="table-responsive table-card mt-3 mb-1">
-                                            <table class="table align-middle table-nowrap" id="customerTable">
-                                                <thead class="table-light">
-                                                    <tr>
-                                                        <th scope="col" style="width: 50px;">
-                                                            <div class="form-check">
-                                                                <input class="form-check-input" type="checkbox"
-                                                                    id="checkAll" value="option">
-                                                            </div>
-                                                        </th>
-                                                        <th class="sort" data-sort="customer_name">Officer ID</th>
-                                                        <th class="sort" data-sort="customer_name">Officer Name</th>
-                                                        <th class="sort" data-sort="customer_name">Rank</th>
-                                                        <th class="sort" data-sort="customer_name">Qualification</th>
-                                                        <th class="sort" data-sort="customer_name">Gender</th>
-                                                        <th class="sort" data-sort="customer_name">Current Command</th>
-                                                        <th class="sort" data-sort="customer_name">Availability </th>
-                                                        <th class="sort" data-sort="action">Action</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody class="list form-check-all">
-                                                    <tr>
-                                                        <th scope="row">
-                                                            <div class="form-check">
-                                                                <input class="form-check-input" type="checkbox"
-                                                                    name="chk_child" value="option1">
-                                                            </div>
-                                                        </th>
-                                                        <td class="id" style="display:none;"><a
-                                                                href="javascript:void(0);"
-                                                                class="fw-medium link-primary">#1</a></td>
-                                                        <td class="customer_name">OFC123</td>
-                                                        <td class="customer_name">John Doe</td>
-                                                        <td class="customer_name">Controller</td>
-                                                        <td class="customer_name">Degree in Law</td>
-                                                        <td class="customer_name">Male</td>
-                                                        <td class="customer_name">Zone A Command</td>
-                                                        <td class="customer_name">Available / Not Available</td>
-
-                                                        <td>
-                                                            <div class="d-flex gap-2" style="float: right;">
-                                                                <div class="edit">
-                                                                    <button class="btn btn-sm"
-                                                                        style="background-color:grey; color: white;"
-                                                                        onmouseover="this.style.backgroundColor='#0b6528';"
-                                                                        onmouseout="this.style.backgroundColor='grey';"
-                                                                        data-bs-toggle="modal"
-                                                                        data-bs-target="#editModal">Allocate</button>
-                                                                </div>
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                            <div class="noresult" style="display: none">
-                                                <div class="text-center">
-                                                    <lord-icon src="https://cdn.lordicon.com/msoeawqm.json"
-                                                        trigger="loop" colors="primary:#121331,secondary:#08a88a"
-                                                        style="width:75px;height:75px">
-                                                    </lord-icon>
-                                                    <h5 class="mt-2">Sorry! No Result Found</h5>
-                                                    <p class="text-muted mb-0">We've searched more than 150+ Orders We
-                                                        did not find any
-                                                        orders for you search.</p>
-                                                </div>
+                                        <div class="modal-footer">
+                                            <div class="hstack gap-2 justify-content-end">
+                                                <button type="submit" class="btn"
+                                                    style="background-color:grey; color: white;"
+                                                    onmouseover="this.style.backgroundColor='#0b6528';"
+                                                    onmouseout="this.style.backgroundColor='grey';"
+                                                    id="add-btn">Generate Report</button>
                                             </div>
                                         </div>
-
-                                        <div class="d-flex justify-content-end">
-                                            <div class="pagination-wrap hstack gap-2">
-                                                <a class="page-item pagination-prev disabled"
-                                                    href="javascript:void(0);">
-                                                    Previous
-                                                </a>
-                                                <ul class="pagination listjs-pagination mb-0"></ul>
-                                                <a class="page-item pagination-next" href="javascript:void(0);">
-                                                    Next
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    </form>
                                 </div><!-- end card -->
                             </div>
                             <!-- end col -->
@@ -455,14 +452,152 @@
                         <!-- end col -->
                     </div>
                     <!-- end row -->
+                     <center>
+                        <h1>Result</h1>
+                     </center>
 
+                    <div class="table-responsive table-card mt-3 mb-1">
+                        <table class="table align-middle table-nowrap" id="customerTable">
+                            <thead class="table-light">
+                                <tr>
+                                    <th scope="col" style="width: 50px;">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="checkAll"
+                                                value="option">
+                                        </div>
+                                    </th>
+                                    <th class="sort" data-sort="customer_name">Rank</th>
+                                    <th class="sort" data-sort="customer_name">Command</th>
+                                    <th class="sort" data-sort="customer_name">Total Officers</th>
+                                    <th class="sort" data-sort="action">Breakdown</th>
+                                    <!-- <th class="sort" data-sort="action">Action</th> -->
+                                </tr>
+                            </thead>
+                            <tbody class="list form-check-all">
+                                <tr>
+                                    <th scope="row">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" name="chk_child"
+                                                value="option1">
+                                        </div>
+                                    </th>
+                                    <td class="id" style="display:none;"><a href="javascript:void(0);" class="fw-medium link-primary">Controller, ACG</a></td>
+                                    <td class="customer_name">HQ Command</td>
+                                    <td class="customer_name">Sharp</td>
+                                    <td class="customer_name">15</td>
+                                    <td class="customer_name">M: 10, F: 5</td>
+
+                                    <!-- <td>
+                                        <div class="d-flex gap-2" style="float: right;">
+                                            <div class="edit">
+                                                <button class="btn btn-sm"
+                                                    style="background-color:grey; color: white;"
+                                                    onmouseover="this.style.backgroundColor='#0b6528';"
+                                                    onmouseout="this.style.backgroundColor='grey';"
+                                                    data-bs-toggle="modal"
+                                                    data-bs-target="#editModal">Edit</button>
+                                            </div>
+                                            <div class="remove">
+                                                <button class="btn btn-sm"
+                                                    style="background-color:red; color: white;"
+                                                    onmouseover="this.style.backgroundColor='#0b6528';"
+                                                    onmouseout="this.style.backgroundColor='red';"
+                                                    data-bs-toggle="modal"
+                                                    data-bs-target="#deleteRecordModal">Remove</button>
+                                            </div>
+                                        </div>
+                                    </td> -->
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="noresult" style="display: none">
+                            <div class="text-center">
+                                <lord-icon src="https://cdn.lordicon.com/msoeawqm.json" trigger="loop"
+                                    colors="primary:#121331,secondary:#08a88a" style="width:75px;height:75px">
+                                </lord-icon>
+                                <h5 class="mt-2">Sorry! No Result Found</h5>
+                                <p class="text-muted mb-0">We've searched more than 150+ Orders We
+                                    did not find any
+                                    orders for you search.</p>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <center>
+                        <h1>Criteria Report</h1>
+                     </center>
+
+                    <div class="table-responsive table-card mt-3 mb-1">
+                        <table class="table align-middle table-nowrap" id="customerTable">
+                            <thead class="table-light">
+                                <tr>
+                                    <th scope="col" style="width: 50px;">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="checkAll"
+                                                value="option">
+                                        </div>
+                                    </th>
+                                    <th class="sort" data-sort="customer_name">Officer ID</th>
+                                    <th class="sort" data-sort="customer_name">Officer Name</th>
+                                    <th class="sort" data-sort="customer_name">Rank</th>
+                                    <th class="sort" data-sort="action">Qualification</th>
+                                    <th class="sort" data-sort="action">Command</th>
+                                    <th class="sort" data-sort="action">Zone</th>
+                                    <th class="sort" data-sort="action">Gender</th>
+                                    <th class="sort" data-sort="action">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody class="list form-check-all">
+                                <tr>
+                                    <th scope="row">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" name="chk_child"
+                                                value="option1">
+                                        </div>
+                                    </th>
+                                    <td class="id" style="display:none;"><a href="javascript:void(0);" class="fw-medium link-primary">Controller, ACG</a></td>
+                                    <td class="customer_name">OFC12345</td>
+                                    <td class="customer_name">Jane Doe</td>
+                                    <td class="customer_name">ACG</td>
+                                    <td class="customer_name">Masters in Management</td>
+                                    <td class="customer_name">HQ Command</td>
+                                    <td class="customer_name">North</td>
+                                    <td class="customer_name">Female</td>
+                                    <td>
+                                        <div class="d-flex gap-2" style="float: right;">
+                                            <div class="edit">
+                                                <button class="btn btn-sm"
+                                                    style="background-color:grey; color: white;"
+                                                    onmouseover="this.style.backgroundColor='#0b6528';"
+                                                    onmouseout="this.style.backgroundColor='grey';"
+                                                    data-bs-toggle="modal"
+                                                    data-bs-target="#">View Details</button>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="noresult" style="display: none">
+                            <div class="text-center">
+                                <lord-icon src="https://cdn.lordicon.com/msoeawqm.json" trigger="loop"
+                                    colors="primary:#121331,secondary:#08a88a" style="width:75px;height:75px">
+                                </lord-icon>
+                                <h5 class="mt-2">Sorry! No Result Found</h5>
+                                <p class="text-muted mb-0">We've searched more than 150+ Orders We
+                                    did not find any
+                                    orders for you search.</p>
+                            </div>
+                        </div>
+                    </div>
 
                     <div class="modal fade" id="showModal" tabindex="-1" aria-labelledby="exampleModalLabel"
                         aria-hidden="true">
                         <div class="modal-dialog modal-dialog-centered">
                             <div class="modal-content">
                                 <div class="modal-header bg-light p-3">
-                                    <h5 class="modal-title" id="exampleModalLabel">Create User</h5>
+                                    <h5 class="modal-title" id="exampleModalLabel">Create File</h5>
                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
                                         id="close-modal"></button>
                                 </div>
@@ -470,50 +605,25 @@
                                     <div class="modal-body">
 
                                         <div class="mb-3">
-                                            <label for="admin-field" class="form-label">Full Name</label>
+                                            <label for="admin-field" class="form-label">File Number</label>
                                             <input type="text" id="admin-field" class="form-control"
-                                                placeholder="Enter Name" required />
+                                                placeholder="File Number" required />
                                         </div>
 
                                         <div class="mb-3">
-                                            <label for="admin-field" class="form-label">Email</label>
-                                            <input type="text" id="email-field" class="form-control"
-                                                placeholder="Enter Email" required />
-                                        </div>
-
-                                        <div class="mb-3">
-                                            <label for="admin-field" class="form-label">Service Number</label>
-                                            <input type="text" id="srv-num-field" class="form-control"
-                                                placeholder="Enter Username" value="NSC-" required />
-                                        </div>
-
-                                        <div class="mb-3">
-                                            <label for="status-field" class="form-label">Unit</label>
-                                            <select class="form-control" data-trigger name="status-field" id="status-field" required>
-                                                <option default>-- Select Unit --</option>
-                                                <option value="">Food</option>
-                                                <option value="Active">Logistics</option>
+                                            <label for="status-field" class="form-label">Precedence / Prority</label>
+                                            <select class="form-control" data-trigger name="status-field"
+                                                id="status-field" required>
+                                                <option default>-- Select Option --</option>
+                                                <option value="Admin">Active</option>
+                                                <option value="Super_Admin">Pending</option>
+                                                <option value="Super_Admin">Waiting</option>
                                             </select>
                                         </div>
-
                                         <div class="mb-3">
-                                            <label for="status-field" class="form-label">Sub Unit <small style="color: red;">(optional)</small></label>
-                                            <select class="form-control" data-trigger name="status-field" id="status-field" required>
-                                                <option default>-- Select Unit --</option>
-                                                <option value="">Food</option>
-                                                <option value="Active">Logistics</option>
-                                            </select>
-                                        </div>
+                                            <label for="admin-field" class="form-label">File Description</label>
+                                            <textarea class="form-control" name="" id=""></textarea>
 
-
-                                        <div class="mb-3"> 
-                                            <label for="status-field" class="form-label">Command</label>
-                                            <select class="form-control" data-trigger name="status-field" id="status-field" required>
-                                                <option default>-- Select Command --</option>
-                                                <option value="">Lagos</option>
-                                                <option value="Active">Abuja</option>
-                                                <option value="Block">Kanu</option>
-                                            </select>
                                         </div>
 
                                     </div>
@@ -525,7 +635,7 @@
                                                 style="background-color:grey; color: white;"
                                                 onmouseover="this.style.backgroundColor='#0b6528';"
                                                 onmouseout="this.style.backgroundColor='grey';" id="add-btn">Add
-                                                User</button>
+                                                File</button>
                                         </div>
                                     </div>
                                 </form>
@@ -533,66 +643,51 @@
                         </div>
                     </div>
 
-                    <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    <div class="modal fade" id="showDispatchModal" tabindex="-1" aria-labelledby="exampleModalLabel"
                         aria-hidden="true">
                         <div class="modal-dialog modal-dialog-centered">
                             <div class="modal-content">
                                 <div class="modal-header bg-light p-3">
-                                    <h5 class="modal-title" id="exampleModalLabel">Edit User</h5>
+                                    <h5 class="modal-title" id="exampleModalLabel">Dispatch File</h5>
                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
                                         id="close-modal"></button>
                                 </div>
-                                
                                 <form class="tablelist-form" autocomplete="off">
                                     <div class="modal-body">
-
                                         <div class="mb-3">
-                                            <label for="admin-field" class="form-label">Full Name</label>
+                                            <label for="admin-field" class="form-label">File Number</label>
                                             <input type="text" id="admin-field" class="form-control"
-                                                placeholder="Enter Name" required />
+                                                placeholder="File Number" value="AO-11111" required />
                                         </div>
-
                                         <div class="mb-3">
-                                            <label for="admin-field" class="form-label">Email</label>
-                                            <input type="text" id="email-field" class="form-control"
-                                                placeholder="Enter Email" required />
+                                            <label for="status-field" class="form-label">Command</label>
+                                            <select class="form-control" data-trigger name="status-field"
+                                                id="status-field" required>
+                                                <option default>-- Select Option --</option>
+                                                <option value="Admin">Lagos</option>
+                                                <option value="Super_Admin">Abuja</option>
+                                                <option value="Super_Admin">Kano</option>
+                                            </select>
                                         </div>
-
-                                        <div class="mb-3">
-                                            <label for="admin-field" class="form-label">Service Number</label>
-                                            <input type="text" id="srv-num-field" class="form-control"
-                                                placeholder="Enter Username" value="NSC-" required />
-                                        </div>
-
                                         <div class="mb-3">
                                             <label for="status-field" class="form-label">Unit</label>
-                                            <select class="form-control" data-trigger name="status-field" id="status-field" required>
-                                                <option default>-- Select Unit --</option>
-                                                <option value="">Food</option>
-                                                <option value="Active">Logistics</option>
+                                            <select class="form-control" data-trigger name="status-field"
+                                                id="status-field" required>
+                                                <option default>-- Select Option --</option>
+                                                <option value="Admin">Logistics</option>
+                                                <option value="Super_Admin">Food</option>
                                             </select>
                                         </div>
-
                                         <div class="mb-3">
-                                            <label for="status-field" class="form-label">Sub Unit <small style="color: red;">(optional)</small></label>
-                                            <select class="form-control" data-trigger name="status-field" id="status-field" required>
-                                                <option default>-- Select Unit --</option>
-                                                <option value="">Food</option>
-                                                <option value="Active">Logistics</option>
+                                            <label for="status-field" class="form-label">Precedence / Prority</label>
+                                            <select class="form-control" data-trigger name="status-field"
+                                                id="status-field" required>
+                                                <option default>-- Select Option --</option>
+                                                <option value="Admin">Active</option>
+                                                <option value="Super_Admin">Pending</option>
+                                                <option value="Super_Admin">Waiting</option>
                                             </select>
                                         </div>
-
-
-                                        <div class="mb-3"> 
-                                            <label for="status-field" class="form-label">Command</label>
-                                            <select class="form-control" data-trigger name="status-field" id="status-field" required>
-                                                <option default>-- Select Command --</option>
-                                                <option value="">Lagos</option>
-                                                <option value="Active">Abuja</option>
-                                                <option value="Block">Kanu</option>
-                                            </select>
-                                        </div>
-
                                     </div>
                                     <div class="modal-footer">
                                         <div class="hstack gap-2 justify-content-end">
@@ -601,46 +696,14 @@
                                             <button type="submit" class="btn"
                                                 style="background-color:grey; color: white;"
                                                 onmouseover="this.style.backgroundColor='#0b6528';"
-                                                onmouseout="this.style.backgroundColor='grey';" id="add-btn">Edit
-                                                User</button>
+                                                onmouseout="this.style.backgroundColor='grey';" id="add-btn">Dispatch
+                                                File</button>
                                         </div>
                                     </div>
                                 </form>
-
                             </div>
                         </div>
                     </div>
-
-                    <!-- Modal -->
-                    <div class="modal fade zoomIn" id="deleteRecordModal" tabindex="-1" aria-hidden="true">
-                        <div class="modal-dialog modal-dialog-centered">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
-                                        id="btn-close"></button>
-                                </div>
-                                <div class="modal-body">
-                                    <div class="mt-2 text-center">
-                                        <lord-icon src="https://cdn.lordicon.com/gsqxdxog.json" trigger="loop"
-                                            colors="primary:#f7b84b,secondary:#f06548"
-                                            style="width:100px;height:100px"></lord-icon>
-                                        <div class="mt-4 pt-2 fs-15 mx-4 mx-sm-5">
-                                            <h4>Are you Sure ?</h4>
-                                            <p class="text-muted mx-4 mb-0">Are you Sure You want to Remove this Record
-                                                ?</p>
-                                        </div>
-                                    </div>
-                                    <div class="d-flex gap-2 justify-content-center mt-4 mb-2">
-                                        <button type="button" class="btn w-sm btn-light"
-                                            data-bs-dismiss="modal">Close</button>
-                                        <button type="button" class="btn w-sm btn-danger " id="delete-record">Yes,
-                                            Delete It!</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!--end modal -->
 
                 </div>
                 <!-- container-fluid -->
