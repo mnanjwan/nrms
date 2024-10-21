@@ -524,135 +524,426 @@
       <div class="main-content">
         <div class="page-content">
           <div class="container-fluid">
+            <!-- start page title -->
             <div class="row">
-              <div class="col">
-                <div class="h-100">
-                  <div class="row">
-                    <div class="col-xl-4 col-md-4">
-                      <!-- card -->
-                      <div class="card card-animate">
-                        <div class="card-body">
-                          <div class="d-flex align-items-center">
-                            <div class="flex-grow-1 overflow-hidden">
-                              <p
-                                class="text-uppercase fw-medium text-muted text-truncate-2 mb-0"
-                              >
-                                Total number of officers :
-                              </p>
-                            </div>
-                          </div>
-                          <div
-                            class="d-flex align-items-end justify-content-between mt-4"
-                          >
-                            <div>
-                              <h4
-                                class="fs-22 fw-semibold ff-secondary mb-4"
-                                id="unit_created_files_count"
-                              >
-                                10
-                              </h4>
-                            </div>
-                            <div class="avatar-sm flex-shrink-0">
-                              <span
-                                class="avatar-title rounded fs-3"
-                                style="background-color: grey"
-                              >
-                                <i class="bx bxs-group"></i>
-                              </span>
-                            </div>
-                          </div>
-                        </div>
-                        <!-- end card body -->
-                      </div>
-                      <!-- end card -->
-                    </div>
-                    <!-- end col -->
-
-                    <div class="col-xl-4 col-md-4">
-                      <!-- card -->
-                      <div class="card card-animate">
-                        <div class="card-body">
-                          <div class="d-flex align-items-center">
-                            <div class="flex-grow-1 overflow-hidden">
-                              <p
-                                class="text-uppercase fw-medium text-muted text-truncate-2 mb-0"
-                              >
-                                Pending requests for officer allocations :
-                              </p>
-                            </div>
-                          </div>
-                          <div
-                            class="d-flex align-items-end justify-content-between mt-4"
-                          >
-                            <div>
-                              <h4
-                                class="fs-22 fw-semibold ff-secondary mb-4"
-                                id="unit_created_files_count"
-                              >
-                                10
-                              </h4>
-                            </div>
-                            <div class="avatar-sm flex-shrink-0">
-                              <span
-                                class="avatar-title rounded fs-3"
-                                style="background-color: gray"
-                              >
-                                <i class="ri-building-line"></i>
-                              </span>
-                            </div>
-                          </div>
-                        </div>
-                        <!-- end card body -->
-                      </div>
-                      <!-- end card -->
-                    </div>
-                    <!-- end col -->
-
-                    <div class="col-xl-4 col-md-4">
-                      <!-- card -->
-                      <div class="card card-animate">
-                        <div class="card-body">
-                          <div class="d-flex align-items-center">
-                            <div class="flex-grow-1 overflow-hidden">
-                              <p
-                                class="text-uppercase fw-medium text-muted text-truncate-2 mb-0"
-                              >
-                                Overview :
-                              </p>
-                            </div>
-                          </div>
-                          <div
-                            class="d-flex align-items-end justify-content-between mt-4"
-                          >
-                            <div>
-                              <h4
-                                class="fs-22 fw-semibold ff-secondary mb-4"
-                                id="unit_created_files_count"
-                              >
-                                10
-                              </h4>
-                            </div>
-                            <div class="avatar-sm flex-shrink-0">
-                              <span
-                                class="avatar-title rounded fs-3"
-                                style="background-color: gray"
-                              >
-                                <i class="ri-building-line"></i>
-                              </span>
-                            </div>
-                          </div>
-                        </div>
-                        <!-- end card body -->
-                      </div>
-                      <!-- end card -->
-                    </div>
-                    <!-- end col -->
-                  </div>
-                  <!-- end row-->
+              <div class="col-12">
+                <div
+                  class="page-title-box d-sm-flex align-items-center justify-content-between"
+                >
+                  <h4 class="mb-sm-0">Track Retirement Records</h4>
                 </div>
-                <!-- end .h-100-->
+              </div>
+            </div>
+            <!-- end page title -->
+
+            <div class="row">
+              <div class="col-lg-8 mx-auto">
+                <div class="card">
+                  <div class="card-header">
+                    <h4 class="card-title mb-0">Track Retirement Records</h4>
+                  </div>
+                  <!-- end card header -->
+
+                  <div class="card-body">
+                    <form class="tablelist-form" autocomplete="off">
+                      <div class="modal-body">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="mb-3">
+                                    <label for="status-field" class="form-label">Report Type</label>
+                                    <select class="form-control" data-trigger name="status-field"
+                                        id="status-field" required>
+                                        <option default>-- Select Option --</option>
+                                        <option value="Total Number of Officers by Rank">Preretirement Status</option>
+                                        <option value="Retirement Distribution">Retirement Distribution</option>
+                                        
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-3">
+                                <div class="mb-3">
+                                    <label for="status-field" class="form-label">Retirement Date Range</label>
+                                    <input class="form-control" type="date" data-trigger name="status-field"
+                                        id="status-field" required>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-3">
+                                <div class="mb-3">
+                                  <label for="status-field" class="form-label"
+                                    >Rank</label
+                                  >
+                                  <select
+                                    class="form-control"
+                                    data-trigger
+                                    name="status-field"
+                                    id="status-field"
+                                    required
+                                  >
+                                    <option default>-- select --</option>
+                                    <option value="Custom Criteria Report">
+                                      ACG
+                                    </option>
+                                    <option
+                                      value="Total Number of Officers by Rank"
+                                    >
+                                      Comptroller
+                                    </option>
+                                  </select>
+                                </div>
+                              </div>
+                       
+
+                          <div class="col-sm-3">
+                            <div class="mb-3">
+                              <label for="status-field" class="form-label"
+                                >Command</label
+                              >
+                              <select
+                                class="form-control"
+                                data-trigger
+                                name="status-field"
+                                id="status-field"
+                                required
+                              >
+                                <option default>-- select --</option>
+                                <option value="Custom Criteria Report">
+                                  Lagos
+                                </option>
+                                <option
+                                  value="Total Number of Officers by Rank"
+                                >
+                                  Kano
+                                </option>
+                              </select>
+                            </div>
+                          </div>
+
+                          <div class="col-sm-3">
+                            <div class="mb-3">
+                              <label for="status-field" class="form-label"
+                                >Export Format</label
+                              >
+                              <select
+                                class="form-control"
+                                data-trigger
+                                name="status-field"
+                                id="status-field"
+                                required
+                              >
+                                <option default>-- Select Option --</option>
+                                <option
+                                  value="Total Number of Officers by Rank"
+                                >
+                                  pdf
+                                </option>
+                                <option value="Custom Criteria Report">
+                                  csv
+                                </option>
+                              </select>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="modal-footer">
+                        <div class="hstack gap-2 justify-content-end">
+                          <button
+                            type="submit"
+                            class="btn"
+                            style="background-color: grey; color: white"
+                            onmouseover="this.style.backgroundColor='#0b6528';"
+                            onmouseout="this.style.backgroundColor='grey';"
+                            id="add-btn"
+                          >
+                            Generate Report
+                          </button>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                  <!-- end card -->
+                </div>
+                <!-- end col -->
               </div>
               <!-- end col -->
+            </div>
+            <!-- end row -->
+
+            
+             <center>
+                <h1>Result</h1>
+             </center>
+
+            <div class="table-responsive table-card mt-3 mb-1">
+                <table class="table align-middle table-nowrap" id="customerTable">
+                    <thead class="table-light">
+                        <tr>
+                            <th scope="col" style="width: 50px;">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="checkAll"
+                                        value="option">
+                                </div>
+                            </th>
+                            <th class="sort" data-sort="customer_name">Officer ID</th>
+                            <th class="sort" data-sort="customer_name">Name</th>
+                            <th class="sort" data-sort="customer_name">Rank</th>
+                            <th class="sort" data-sort="customer_name">Command</th>
+                            <th class="sort" data-sort="customer_name">Retirement Date</th>
+                            <th class="sort" data-sort="customer_name">Preretirement Status</th>
+                            <th class="sort" data-sort="action">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody class="list form-check-all">
+                        <tr>
+                            <th scope="row">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" name="chk_child"
+                                        value="option1">
+                                </div>
+                            </th>
+                            <td class="id" style="display:none;"><a href="javascript:void(0);" class="fw-medium link-primary">#1</a></td>
+                            <td class="customer_name">OFF12345</td>
+                            <td class="customer_name">John Doe</td>
+                            <td class="customer_name">ACG</td>
+                            <td class="customer_name">HQ</td>
+                            <td class="customer_name">December 31, 2024</td>
+                            <td class="customer_name">Processing</td>
+
+                            <td>
+                                <div class="d-flex gap-2" style="float: right;">
+                                    <div class="edit">
+                                        <button class="btn btn-sm"
+                                            style="background-color:grey; color: white;"
+                                            onmouseover="this.style.backgroundColor='#0b6528';"
+                                            onmouseout="this.style.backgroundColor='grey';"
+                                            data-bs-toggle="modal"
+                                            data-bs-target="#editModal">View Detail</button>
+                                    </div>
+                                    <div class="remove">
+                                        <button class="btn btn-sm"
+                                            style="background-color:red; color: white;"
+                                            onmouseover="this.style.backgroundColor='#0b6528';"
+                                            onmouseout="this.style.backgroundColor='red';"
+                                            data-bs-toggle="modal"
+                                            data-bs-target="#deleteRecordModal">Export</button>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="noresult" style="display: none">
+                    <div class="text-center">
+                        <lord-icon src="https://cdn.lordicon.com/msoeawqm.json" trigger="loop"
+                            colors="primary:#121331,secondary:#08a88a" style="width:75px;height:75px">
+                        </lord-icon>
+                        <h5 class="mt-2">Sorry! No Result Found</h5>
+                        <p class="text-muted mb-0">We've searched more than 150+ Orders We
+                            did not find any
+                            orders for you search.</p>
+                    </div>
+                </div>
+            </div>
+
+
+            <div
+              class="modal fade"
+              id="showModal"
+              tabindex="-1"
+              aria-labelledby="exampleModalLabel"
+              aria-hidden="true"
+            >
+              <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                  <div class="modal-header bg-light p-3">
+                    <h5 class="modal-title" id="exampleModalLabel">
+                      Create File
+                    </h5>
+                    <button
+                      type="button"
+                      class="btn-close"
+                      data-bs-dismiss="modal"
+                      aria-label="Close"
+                      id="close-modal"
+                    ></button>
+                  </div>
+                  <form class="tablelist-form" autocomplete="off">
+                    <div class="modal-body">
+                      <div class="mb-3">
+                        <label for="admin-field" class="form-label"
+                          >File Number</label
+                        >
+                        <input
+                          type="text"
+                          id="admin-field"
+                          class="form-control"
+                          placeholder="File Number"
+                          required
+                        />
+                      </div>
+
+                      <div class="mb-3">
+                        <label for="status-field" class="form-label"
+                          >Precedence / Prority</label
+                        >
+                        <select
+                          class="form-control"
+                          data-trigger
+                          name="status-field"
+                          id="status-field"
+                          required
+                        >
+                          <option default>-- Select Option --</option>
+                          <option value="Admin">Active</option>
+                          <option value="Super_Admin">Pending</option>
+                          <option value="Super_Admin">Waiting</option>
+                        </select>
+                      </div>
+                      <div class="mb-3">
+                        <label for="admin-field" class="form-label"
+                          >File Description</label
+                        >
+                        <textarea class="form-control" name="" id=""></textarea>
+                      </div>
+                    </div>
+                    <div class="modal-footer">
+                      <div class="hstack gap-2 justify-content-end">
+                        <button
+                          type="button"
+                          class="btn btn-light"
+                          data-bs-dismiss="modal"
+                        >
+                          Close
+                        </button>
+                        <button
+                          type="submit"
+                          class="btn"
+                          style="background-color: grey; color: white"
+                          onmouseover="this.style.backgroundColor='#0b6528';"
+                          onmouseout="this.style.backgroundColor='grey';"
+                          id="add-btn"
+                        >
+                          Add File
+                        </button>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="modal fade"
+              id="showDispatchModal"
+              tabindex="-1"
+              aria-labelledby="exampleModalLabel"
+              aria-hidden="true"
+            >
+              <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                  <div class="modal-header bg-light p-3">
+                    <h5 class="modal-title" id="exampleModalLabel">
+                      Dispatch File
+                    </h5>
+                    <button
+                      type="button"
+                      class="btn-close"
+                      data-bs-dismiss="modal"
+                      aria-label="Close"
+                      id="close-modal"
+                    ></button>
+                  </div>
+                  <form class="tablelist-form" autocomplete="off">
+                    <div class="modal-body">
+                      <div class="mb-3">
+                        <label for="admin-field" class="form-label"
+                          >File Number</label
+                        >
+                        <input
+                          type="text"
+                          id="admin-field"
+                          class="form-control"
+                          placeholder="File Number"
+                          value="AO-11111"
+                          required
+                        />
+                      </div>
+                      <div class="mb-3">
+                        <label for="status-field" class="form-label"
+                          >Command</label
+                        >
+                        <select
+                          class="form-control"
+                          data-trigger
+                          name="status-field"
+                          id="status-field"
+                          required
+                        >
+                          <option default>-- Select Option --</option>
+                          <option value="Admin">Lagos</option>
+                          <option value="Super_Admin">Abuja</option>
+                          <option value="Super_Admin">Kano</option>
+                        </select>
+                      </div>
+                      <div class="mb-3">
+                        <label for="status-field" class="form-label"
+                          >Unit</label
+                        >
+                        <select
+                          class="form-control"
+                          data-trigger
+                          name="status-field"
+                          id="status-field"
+                          required
+                        >
+                          <option default>-- Select Option --</option>
+                          <option value="Admin">Logistics</option>
+                          <option value="Super_Admin">Food</option>
+                        </select>
+                      </div>
+                      <div class="mb-3">
+                        <label for="status-field" class="form-label"
+                          >Precedence / Prority</label
+                        >
+                        <select
+                          class="form-control"
+                          data-trigger
+                          name="status-field"
+                          id="status-field"
+                          required
+                        >
+                          <option default>-- Select Option --</option>
+                          <option value="Admin">Active</option>
+                          <option value="Super_Admin">Pending</option>
+                          <option value="Super_Admin">Waiting</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="modal-footer">
+                      <div class="hstack gap-2 justify-content-end">
+                        <button
+                          type="button"
+                          class="btn btn-light"
+                          data-bs-dismiss="modal"
+                        >
+                          Close
+                        </button>
+                        <button
+                          type="submit"
+                          class="btn"
+                          style="background-color: grey; color: white"
+                          onmouseover="this.style.backgroundColor='#0b6528';"
+                          onmouseout="this.style.backgroundColor='grey';"
+                          id="add-btn"
+                        >
+                          Dispatch File
+                        </button>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
             </div>
           </div>
           <!-- container-fluid -->
@@ -666,15 +957,11 @@
                 <script>document.write(new Date().getFullYear())</script> © NRMS | Nigeria Customs
                 Service | All rights reserved | Powered by: DCG KI Adeola psc(+), CC MS Umar, AC AE Ejidoh psc, AC ED Antia psc and Software Team ICT-MOD.
             </div>
-              <div class="col-sm-6">
-                <div class="text-sm-end d-none d-sm-block">
-                  <a href="">FAQ</a>
-                </div>
-              </div>
             </div>
           </div>
         </footer>
       </div>
+
       <!-- end main content-->
     </div>
     <!-- END layout-wrapper -->
